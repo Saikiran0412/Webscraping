@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SLUview</title>
+  <link rel="stylesheet" href="slu.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+  <header class="topbar">
+    <div class="wrap">
+      <h1 class="brand">SLUview</h1>
+      <nav class="mast-nav" aria-label="Primary">
+        <a href="#filters">Filters</a>
+        <a href="#featured">Featured</a>
+        <a href="#reviews">Reviews</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 3-column layout -->
+  <main class="wrap grid">
+    
+    <!-- Column A: Filters -->
+    <aside class="panel" id="filters" aria-labelledby="filters-title">
+      <h2 class="panel-title" id="filters-title">Filter</h2>
+
+      <label class="field">
+        <span>Category</span>
+        <select aria-label="Category">
+          <option>All</option>
+          <option>Coffee &amp; Tea</option>
+          <option>Restaurants</option>
+          <option>Hotels</option>
+          <option>Parks</option>
+          <option>Museums</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span>Price</span>
+        <select aria-label="Price">
+          <option>$</option>
+          <option>$$</option>
+          <option>$$$</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span>Min Rating</span>
+        <input type="number" value="4" min="1" max="5" step="0.1" aria-label="Minimum rating">
+      </label>
+    </aside>
+
+    <!-- Column B: Featured Businesses (updated to your picks) -->
+    <section class="panel" id="featured" aria-labelledby="featured-title">
+      <h2 class="panel-title" id="featured-title">Featured Businesses</h2>
+
+      <!-- Business 1: Pizza Twist -->
+      <article class="card biz">
+        <header class="card-head">
+          <h3 class="card-title">Pizza Twist – St. Louis</h3>
+          <p class="card-meta">Pizza • St. Louis, MO • $$ • ★ 4.2</p>
+        </header>
+        <p class="blurb">Local pizzeria famous for fusion pies like Butter Chicken Pizza and Paneer Tikka Pizza.</p>
+      </article>
+
+      <!-- Business 2: Taco Twist -->
+      <article class="card biz">
+        <header class="card-head">
+          <h3 class="card-title">Taco Twist</h3>
+          <p class="card-meta">Mexican • St. Louis, MO • $ • ★ 4.0</p>
+        </header>
+        <p class="blurb">Creative tacos blending classic street flavors with modern international twists.</p>
+      </article>
+
+      <!-- Business 3: Masala Republic -->
+      <article class="card biz">
+        <header class="card-head">
+          <h3 class="card-title">Masala Republic</h3>
+          <p class="card-meta">Indian • St. Louis, MO • $$ • ★ 4.5</p>
+        </header>
+        <p class="blurb">Trendy Indian eatery known for bold curries, small plates, and a cozy contemporary vibe.</p>
+      </article>
+    </section>
+
+    <!-- Column C: Latest Reviews (dynamic) -->
+    <section class="panel" id="reviews" aria-labelledby="reviews-title">
+      <h2 class="panel-title" id="reviews-title">Latest Reviews</h2>
+
+      <div id="reviews-list" class="reviews-list" aria-live="polite">
+        <article class="card muted">
+          <p>Loading reviews from <code>data.json</code> (or <code>reviews.csv</code>)…</p>
+        </article>
+        <noscript>
+          <article class="card warn">
+            <p>Enable JavaScript to load reviews dynamically, or paste 5+ review cards here statically.</p>
+          </article>
+        </noscript>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <small>© 2025 SLUview — Demo for Web Technologies HW</small>
+    </div>
+  </footer>
+
+  <!-- Graduate requirement: dynamically load data.json or reviews.csv and render review cards -->
+  <script>
+    (async function loadReviews() {
+      const target = document.getElementById('reviews-list');
+
+      function render(list) {
+        if (!Array.isArray(list) || list.length === 0) {
+          target.innerHTML = '<article class="card warn"><p>No reviews found. Ensure data.json or reviews.csv has at least 5 rows.</p></article>';
+          return;
+        }
+        const frag = document.createDocumentFragment();
+        list.forEach(r => {
+          const card = document.createElement('article');
+          card.className = 'card';
+          card.innerHTML = `
+            <header class="review-head">
+              <strong>${r.reviewer ?? 'Anonymous'}</strong>
+              <span class="sep">·</span>
+              <span>★ ${r.rating ?? ''}</span>
+              <span class="sep">·</span>
+              <time datetime="${r.date ?? ''}">${r.date ?? ''}</time>
+            </header>
+            <p class="card-text">${r.text ?? ''}</p>
+          `;
+          frag.appendChild(card);
+        });
+        target.innerHTML = '';
+        target.appendChild(frag);
+      }
+
+      // Minimal CSV parser for "reviews.csv" with headers: reviewer,rating,date,text,business,location
+      function parseCSV(csv) {
+        const lines = csv.trim().split(/\r?\n/);
+        const headers = lines.shift().split(',').map(h => h.trim());
+        return lines.map(line => {
+          // handle quoted commas
+          const cells = [];
+          let cur = '', inQ = false;
+          for (let i = 0; i < line.length; i++) {
+            const c = line[i], n = line[i+1];
+            if (c === '"' && n === '"') { cur += '"'; i++; continue; }
+            if (c === '"') { inQ = !inQ; continue; }
+            if (c === ',' && !inQ) { cells.push(cur); cur = ''; continue; }
+            cur += c;
+          }
+          cells.push(cur);
+          const obj = {};
+          headers.forEach((h, idx) => obj[h] = (cells[idx] ?? '').trim());
+          // normalize types
+          if (obj.rating) obj.rating = Number(obj.rating);
+          return obj;
+        });
+      }
+
+      async function tryJSON() {
+        const r = await fetch('data.json', { cache: 'no-store' });
+        if (!r.ok) throw new Error('no json');
+        const j = await r.json();
+        // Accept {reviews:[...]} or plain array
+        return Array.isArray(j) ? j : (j.reviews || []);
+      }
+      async function tryCSV() {
+        const r = await fetch('reviews.csv', { cache: 'no-store' });
+        if (!r.ok) throw new Error('no csv');
+        const text = await r.text();
+        return parseCSV(text);
+      }
+
+      try {
+        const reviews = await tryJSON().catch(async () => await tryCSV());
+        // Render at most 20, but must have >= 5 in your file per spec
+        render(reviews.slice(0, 20));
+      } catch (e) {
+        target.innerHTML = `
+          <article class="card warn">
+            <h3>Couldn’t load data.json or reviews.csv</h3>
+            <p>Place either file next to <code>index.html</code>. See examples below.</p>
+            <p><small>${e.message}</small></p>
+          </article>`;
+      }
+    })();
+  </script>
+
+</body>
+</html>

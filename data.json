@@ -1,0 +1,9 @@
+{
+  "reviews": [
+    { "reviewer": "Jane D.",  "rating": 4.0, "date": "2025-09-01", "text": "Loved the latte art! Service was quick. Will return.", "business": "Coffee House A", "location": "St. Louis, MO" },
+    { "reviewer": "Mark T.",  "rating": 4.5, "date": "2025-08-29", "text": "Great espresso and friendly staff." },
+    { "reviewer": "Priya S.", "rating": 5.0, "date": "2025-08-20", "text": "Best croissants near campus." },
+    { "reviewer": "Liam C.",  "rating": 3.8, "date": "2025-08-18", "text": "Crowded at noon, but worth it." },
+    { "reviewer": "Ava R.",   "rating": 4.2, "date": "2025-08-10", "text": "Nice ambience; good Wi-Fi for study." }
+  ]
+}
