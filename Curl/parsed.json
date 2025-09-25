@@ -1,0 +1,73 @@
+{
+  "source_file": "Curl/listing_fr.html",
+  "business": {
+    "name": "Pizza Twist",
+    "category": null,
+    "city_region": "St Louis, MO",
+    "price_range": "$",
+    "overall_rating": "4",
+    "total_reviews": "13"
+  },
+  "reviews": [
+    {
+      "business_name": "Pizza Twist",
+      "business_category": null,
+      "business_city_region": "St Louis, MO",
+      "price_range": "$",
+      "overall_rating": "4",
+      "total_reviews": "13",
+      "reviewer": null,
+      "stars": null,
+      "date": null,
+      "text": ""
+    },
+    {
+      "business_name": "Pizza Twist",
+      "business_category": null,
+      "business_city_region": "St Louis, MO",
+      "price_range": "$",
+      "overall_rating": "4",
+      "total_reviews": "13",
+      "reviewer": null,
+      "stars": null,
+      "date": null,
+      "text": ""
+    },
+    {
+      "business_name": "Pizza Twist",
+      "business_category": null,
+      "business_city_region": "St Louis, MO",
+      "price_range": "$",
+      "overall_rating": "4",
+      "total_reviews": "13",
+      "reviewer": null,
+      "stars": null,
+      "date": null,
+      "text": ""
+    },
+    {
+      "business_name": "Pizza Twist",
+      "business_category": null,
+      "business_city_region": "St Louis, MO",
+      "price_range": "$",
+      "overall_rating": "4",
+      "total_reviews": "13",
+      "reviewer": null,
+      "stars": null,
+      "date": null,
+      "text": ""
+    },
+    {
+      "business_name": "Pizza Twist",
+      "business_category": null,
+      "business_city_region": "St Louis, MO",
+      "price_range": "$",
+      "overall_rating": "4",
+      "total_reviews": "13",
+      "reviewer": null,
+      "stars": null,
+      "date": null,
+      "text": ""
+    }
+  ]
+}
