@@ -1,9 +1,70 @@
 {
   "reviews": [
-    { "reviewer": "Jane D.",  "rating": 4.0, "date": "2025-09-01", "text": "Loved the latte art! Service was quick. Will return.", "business": "Coffee House A", "location": "St. Louis, MO" },
-    { "reviewer": "Mark T.",  "rating": 4.5, "date": "2025-08-29", "text": "Great espresso and friendly staff." },
-    { "reviewer": "Priya S.", "rating": 5.0, "date": "2025-08-20", "text": "Best croissants near campus." },
-    { "reviewer": "Liam C.",  "rating": 3.8, "date": "2025-08-18", "text": "Crowded at noon, but worth it." },
-    { "reviewer": "Ava R.",   "rating": 4.2, "date": "2025-08-10", "text": "Nice ambience; good Wi-Fi for study." }
+    {
+      "reviewer": "Rochelle T.",
+      "rating": 2,
+      "date": "2025-08-29T18:51:30-05:00",
+      "text": "We did not receive our cheese pizza. The other pizzas had a very unusual seasoning to it and we didn't care for it at all. Overall we had 5 in our group and none of us liked the flavors."
+    },
+    {
+      "reviewer": "Jennifer M.",
+      "rating": 4,
+      "date": "2025-07-21T12:13:17-05:00",
+      "text": "Ordered a Pizza due to them being on the Pizza Passport for the first time this year, plus I could carry out and take back to my office for my coworkers to try!!! My pizza was Hot and ready for pick up!!! I chose the Chicken Delight which was a hit with the office! They have all sorts of Indian inspired pizza/tacos etc. Give them a try!"
+    },
+    {
+      "reviewer": "Tayluh' B.",
+      "rating": 1,
+      "date": "2025-07-18T13:23:20-05:00",
+      "text": "This place might as well shut down..they removed the rice from the chicken Marsala taco, the chicken in the taco was very small no larger than a pinky in width ...I ordered the mojo steak and it was litterally a SLIVER of meat and a mound of white sauce...seems like they are trying to save money removing items. I won't be back"
+    },
+    {
+      "reviewer": "Jonathan C.",
+      "rating": 4,
+      "date": "2025-07-10T22:22:47-05:00",
+      "text": "The Indian pizzas have been a nice surprise. We wanted something quick but not too pricey in the CWE, and this was a good spot. We had the paneer tikka and tandoori chicken pizzas. They were well spiced and very flavorful. Crust was very good, could be better. We had it for takeout and it was warm out of the oven."
+    },
+    {
+      "reviewer": "Mary C.",
+      "rating": 3,
+      "date": "2025-03-20T08:05:05-05:00",
+      "text": "Pizza Twist is a fusion pizza kitchen chain serving things like palak paneer \"pizzatwist\" pasta and butter chicken naan pizza! This is the first and only location in Saint Louis (other branches in DC, etc). A lot of coworkers love this place so we decided to order carry out with our friend who was visiting from out of town. The pizzas were super pretty/aesthetic pizzas with fresh cilantro garnish and could be made halal or gluten free. We got thin crust versions of the chicken tikka pizza, 3 idiots (different types of chicken), and tandoori paneer pizza. They have lots of options with a giant menu where you can choose deep dish or thin crust. We ordered takeout but the interior seems very clean from when I've walked by in CWE! I thought the pizza was about average (crust was a little thicker and softer than I would have liked for thin crust--would have preferred more crispy) but with interesting flavors. Chicken tikka was spicy. The paneer one was ok. The 3 idiots was my favorite. My rating: 3/5 for taste, fiancé's 4/5, our friend loved it though!"
+    },
+    {
+      "reviewer": "Natalya R.",
+      "rating": 5,
+      "date": "2024-12-24T21:53:16-06:00",
+      "text": "Everything you want to order from this place is filled with different flavors and delicious! This place is a must-visit if you're hunting for a culinary adventure that tantalizes the taste buds! Each dish bursts with vibrant flavors that come together in perfect harmony. Whether you're in the mood for a cozy meal or a comforting treat, I wholeheartedly recommend this gem to satisfy all your comfort food cravings. You won't be disappointed! I highly recommend this place for all your comfy food cravings."
+    },
+    {
+      "reviewer": "Benetta H.",
+      "rating": 4,
+      "date": "2024-11-13T20:48:00-06:00",
+      "text": "Love how this place was open until 10:00pm on a weeknight! Tried the chicken tikka masala pizza during St. Louis Pizza Week 2024. Very tasty hand tossed pizza."
+    },
+    {
+      "reviewer": "Renee J.",
+      "rating": 4,
+      "date": "2024-10-18T12:58:50-05:00",
+      "text": "Ordered delivery with co-workers. BBQ chicken pizza 2 topping pizza beef and jalapeño Chicken Alfredo Pasta Both the pizza and pasta were good."
+    },
+    {
+      "reviewer": "Cindy A.",
+      "rating": 5,
+      "date": "2024-10-15T20:19:10-05:00",
+      "text": "Don't let the interior throw you off. This pizza was delicious. It was very cheesy with a great crust. I highly recommend"
+    },
+    {
+      "reviewer": "Tom E.",
+      "rating": 5,
+      "date": "2024-04-01T11:58:26-05:00",
+      "text": "First off, a moment of silence for the now departed Chick'nCone that used to be in this spot.... Respects having been paid, on to the review. Indian Pizza? Yes, please! They also have Tacos, Burritos, Bowls and 'Burgers'. I don't think any of the burgers have actual beef patties, though 'ground beef' is listed as a pizza topping. Most (or all) of the non-pizza offerings are from the 'Taco Twist' side of the operation. Fresh, modern decor. Nice vinyl wall mural. Fast and friendly service. If you order a pizza, it will take a bit, especially if there are a bunch of pizza orders ahead of you. I'm not sure what they're using for an oven. I suspect it's a roller style electric. So, 10-15 minutes vs the 20-30 you'd expect from a fancy oven on a made to order pie at a place that is not Fast Casual. The five stars are provisional. I've only had one Chicken Curry pizza. I may change my mind as I eat my way through the menu. Or not. It's hard to say. I suspect there are better Chicken Curry pizzas to be had somewhere, but this is probably the only game in town. The prices are a bit premium, also. Again, though, if you've got the only Maharaja Burger in town..."
+    },
+    {
+      "reviewer": "",
+      "rating": null,
+      "date": "",
+      "text": "10:30 AM - 10:00 PM"
+    }
   ]
 }
